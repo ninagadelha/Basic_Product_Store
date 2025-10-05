@@ -1,11 +1,8 @@
 import mongoose from 'mongoose';
 
 export const connectDB = async() =>{
-    try{
+    try{                                                                //NOTE: using enviornmental variables ('process.env.MONGO_URI') allows us to keep sensitive info out of code 
         const conn = await mongoose.connect(process.env.MONGO_URI);     //conect to my MongoDB database
-                                                                        //NOTE: using enviornmental variables (process.env.MONGO_URI) allows us to keep sensitive info 
-                                                                            //out of code 
-
         console.log(`MongoDB Connected: ${conn.connection.host}`);      
     }                                                                   //NOTE: FN + Esc for backtick
     catch (error){
