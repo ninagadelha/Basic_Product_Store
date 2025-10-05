@@ -1,0 +1,15 @@
+Notes for Basic_Product_Store
+---------------------------------------------------------
+
+File: package.json:
+Line 7 --> allows us to run 'npm run dev' to start instead of node .\backend\server.js 
+
+
+Dependencies - 
+express: web server framework
+mongoose: MongoDB ORM to interact with a database
+dotenv: lets you use enviornment variables (passwords/API keys)
+
+devDependencies - 
+nodemon: restarts server auto when file(s) change
+
