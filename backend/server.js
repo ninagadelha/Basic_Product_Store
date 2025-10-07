@@ -6,14 +6,15 @@ import productRoutes from "./routes/product.route.js";
 
 dotenv.config();                                                    //loads enviornmental variables from .env file
 
-const app = express();                                              //creates an express application instance
+const app = express();   
+const PORT = process.env.PORT || 5000                               //creates an express application instance
 
 app.use(express.json());                                            //allows us to accept JSON data in the req.body
 
 app.use("/api/products", productRoutes);
 
-app.listen(5000, () => {   
+app.listen(PORT, () => {   
     connectDB();                                                    //connects MongoDB after server starts                                         
-    console.log("Server started at http://localhost:5000");         //starts sever and tells it to listen for incoming requests on port 5000
+    console.log("Server started at http://localhost:" + PORT);         //starts sever and tells it to listen for incoming requests on port 5000
 });
 
